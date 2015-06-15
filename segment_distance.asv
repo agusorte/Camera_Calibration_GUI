@@ -1,0 +1,10 @@
+function A_aux=segment_distance(scan,th,th2)
+
+    dist_sq = sqrt(scan(:,1).*scan(:,1)+scan(:,2).*scan(:,2))/1000;
+    
+    %%distance segmentation
+    
+    indx=find(dist_sq<=th  & th<=dist_sq );
+    
+    
+    A_aux=[ scan(indx,1),scan(indx,2),scan(indx,3)];

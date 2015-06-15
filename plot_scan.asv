@@ -1,0 +1,13 @@
+function plot_scan(scan,handles)
+
+
+hold on;
+axes(handles.axes_3Dpoints)
+plot3(scan(:,1),handles.PTS_3D(:,2),handles.PTS_3D(:,3),'b.','MarkerSize',0.5);
+hold on;
+Xax=max(handles.PTS_3D(:,1));
+Yax=max(handles.PTS_3D(:,2));
+Zax=max(handles.PTS_3D(:,3));
+plot3([0 Xax],[0 0],[0 0],'r-','linewidth',2),text(Xax,0,0,'X');
+plot3([0 0],[0 Yax],[0 0],'g-','linewidth',2),text(0,Yax,0,'Y');
+plot3([0 0],[0 0],[0 Zax],'b-','linewidth',2),text(0,0,Zax,'Z');
